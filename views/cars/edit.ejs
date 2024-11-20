@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Fruit</title>
+</head>
+<body>
+  <h1>Editing <%=car.name%></h1>
+  <a href="/cars/<%=car._id%>">Back to <%=car.name%></a>
+
+  <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= car.name %>">
+
+    <label for="isManualTransmission">Ready for USA Market?</label>
+    <input
+      type="checkbox"
+      name="isManualTransmission"
+      id="isManualTransmission"
+      <% if(car.isManualTransmission){ %>
+        checked
+      <% } %>
+    >
+
+    <button type="submit">Update <%=car.name%></button>
+  </form>
+</body>
+</html>

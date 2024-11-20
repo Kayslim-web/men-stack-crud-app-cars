@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 // 1st define the shape of the object we want to store
 // in our database -- SCHEMA
-const fruitSchema = new mongoose.Schema({
+const carSchema = new mongoose.Schema({
   name: String,
-  isReadyToEat: Boolean,
+  isManualTransmission: Boolean,
 });
 
 // Tell Mongoose that the model we want to generate is based off
 // the schema and provide a name to it
 // mongoose.model("Name", schema)
 
-const Fruit = mongoose.model('Fruit', fruitSchema);
+const Car = mongoose.model('Car', carSchema);
 
 // share it with the rest of your application
 // module.exports = modelName
-module.exports = Fruit;
+module.exports = Car;

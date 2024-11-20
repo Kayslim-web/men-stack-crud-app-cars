@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= car.name %></title>
+</head>
+<body>
+  <h1><%= car.name %></h1>
+
+  <a href="/cars">Back to All Cars</a>
+
+  <br> <br>
+
+<% if(car.isManualTransmission){ %>
+    <p> Ready for Export!!!</p>
+  <% }else{ %>
+    <p>Don't Export!!!</p>
+<% } %>
+
+
+ <p> <%= car.isManualTransmission ?  " Ready for Export!!!":  "Don't Export!!!" %></p>
+
+
+  <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete <%= car.name %></button>
+  </form>
+  <a href="/cars/<%= car._id %>/edit">Edit <%= car.name %></a>
+</body>
+</html>
